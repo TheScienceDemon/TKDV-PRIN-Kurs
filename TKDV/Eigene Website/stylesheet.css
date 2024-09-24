@@ -1,0 +1,17 @@
+body {
+	margin: 0;
+	color: #009EC1;
+	background-color: #161616;
+	font-family: VCR OSD Mono, Courier New;
+	text-align: center;
+}
+
+p {
+	font-size:14pt;
+}
+
+h1, h2 {
+	padding-top: 25px;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
