@@ -1,13 +1,13 @@
 body {
-	margin: 0;
 	color: #009EC1;
 	background-color: #161616;
 	font-family: VCR OSD Mono, Courier New;
 	text-align: center;
+	scrollbar-width: none;
 }
 
 p {
-	font-size:14pt;
+	font-size: 16pt;
 }
 
 h1, h2 {
