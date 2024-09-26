@@ -1,0 +1,78 @@
+body {
+	font-family: Monocraft, Courier New;
+	text-align: center;
+}
+
+h1 {
+	width: 100%;
+	font-weight: lighter;
+	font-size: 48px;
+	color: #CC0000;
+}
+
+h2 {
+	display: inline-block;
+	background-color: #CC0000;
+	padding: 4px;
+	margin: 6px;
+	font-size: 32px;
+	color: white;
+}
+
+h3 {
+	display: inline-block;
+	font-weight: bold;
+	background-color: white;
+	padding: 8px;
+	color: #CC0000;
+}
+
+.container {
+	min-width: 775px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.main {
+	background-size: cover;
+	min-width: 1200px;
+	min-height: 450px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("imgs/Roter\ Platz.jpg");
+}
+
+.more {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 45px;
+}
+
+.more div {
+	background-size: cover;
+	min-width: 450px;
+	min-height: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+#sights {
+	background-image: url("imgs/Moskau\ bei\ Nacht.jpg");
+}
+
+#events {
+	background-image: url("imgs/Lenin-Mausoleum.jpg");
+}
+
+#footer {
+	color: #CC0000;
+	font-weight: lighter;
+	font-size: 24px;
+	padding: 50px;
+}
