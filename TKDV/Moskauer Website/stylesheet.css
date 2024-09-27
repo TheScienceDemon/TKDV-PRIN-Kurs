@@ -42,6 +42,42 @@ h3 {
 	justify-content: center;
 	align-items: center;
 	background-image: url("imgs/Roter\ Platz.jpg");
+	animation-name: sizeChange;
+	animation-duration: 1s;
+	animation-delay: 2s;
+}
+
+.main:hover {
+	width: 1300px;
+	height: 500px;
+	filter: blur(5px);
+}
+
+@keyframes sizeChange {
+	0% {
+		min-width: 1200px;
+		min-height: 450px;
+	}
+
+	25% {
+		min-width: 1225px;
+		min-height: 462.5px;
+	}
+
+	50% {
+		min-width: 1250px;
+		min-height: 475px;
+	}
+
+	75% {
+		min-width: 1275px;
+		min-height: 487.5px;
+	}
+
+	100% {
+		min-width: 1300px;
+		min-height: 500px;
+	}
 }
 
 .more {
