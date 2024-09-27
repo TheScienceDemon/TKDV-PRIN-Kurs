@@ -6,6 +6,6 @@ public class Extensions {
 	}
 
 	public static boolean IstZwischen(int value, int min, int max) {
-		return false; // To be continued
+		return value >= min && value <= max;
 	}
 }

@@ -1,22 +1,26 @@
 package prin.sciencedemon;
 
-import prin.sciencedemon.chapter2.*;
+import prin.sciencedemon.fernseher.Fernseher;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Heizung heizung = new Heizung(15, 30);
+		Fernseher fernseher = new Fernseher();
+		fernseher.GibFernseherZustandAus();
 
-		float temperatur = heizung.gibTemperatur();
+		fernseher.ÄndereFernseherAnZustand(); // a) An / Aus
+		fernseher.GibFernseherZustandAus();
 
+		fernseher.ÄndereLautstärke(5); // b) Lautstärke
+		fernseher.GibFernseherZustandAus();
 
-		/*
-		for (int i = 0; i < 5; i++) {
-			heizung.verändereTemperatur(Heizung.TemperaturEinstellungen.WÄRMER);
-		}
+		fernseher.ÄndereFernseherStummZustand(); // c) Stummschalten
+		fernseher.GibFernseherZustandAus();
 
-		for (int i = 0; i < 8; i++) {
-			heizung.verändereTemperatur(Heizung.TemperaturEinstellungen.KÜHLER);
-		}*/
+		fernseher.ÄndereLautstärke(Fernseher.Lautstärken.HERUNTER); // d) Lautstärke -> "Lauter" / "Leiser"
+		fernseher.GibFernseherZustandAus();
+
+		fernseher.WechsleSender(24); // e) Sender auswählen
+		fernseher.GibFernseherZustandAus();
 	}
 }
