@@ -3,7 +3,6 @@ body {
 	background-color: #161616;
 	font-family: VCR OSD Mono, Courier New;
 	text-align: center;
-	scrollbar-width: none;
 }
 
 p {
@@ -14,4 +13,19 @@ h1, h2 {
 	padding-top: 25px;
 	text-decoration: underline;
 	text-transform: uppercase;
+}
+
+footer {
+	position: absolute;
+	text-align: left;
+}
+
+footer p, footer h2 {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	padding-left: 5vw;
+	padding-right: 5vw;
 }
