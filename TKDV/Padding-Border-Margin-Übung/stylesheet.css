@@ -1,0 +1,21 @@
+body {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.containerOne {
+	background-color: lightblue;
+	width: 500px;
+	border: 20px dotted green;
+	padding: 10px;
+	margin: 60px;
+}
+
+.containerTwo {
+	background-color: #161616;
+	color: #009EC1;
+	width: 500px;
+	border: 6px solid #009EC1;
+	padding: 10px;
+	margin: 25px;
+	text-align: center;
+}
