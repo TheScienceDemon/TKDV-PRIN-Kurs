@@ -1,6 +1,6 @@
 package prin.sciencedemon;
 
-import prin.sciencedemon.fernseher.Fernseher;
+import prin.sciencedemon.chapter2.fernseher.Fernseher;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package prin.sciencedemon.fernseher;
+package prin.sciencedemon.chapter2.fernseher;
 
 import prin.sciencedemon.Extensions;
 
