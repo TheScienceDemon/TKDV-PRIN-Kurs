@@ -1,26 +1,30 @@
-package prin.sciencedemon;
+package prin.ScienceDemon;
 
-import prin.sciencedemon.chapter2.fernseher.Fernseher;
+import prin.ScienceDemon.Chapter4.MusikSammlungV1.MusikSammlung;
+import static prin.ScienceDemon.Extensions.PrintToConsole;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Fernseher fernseher = new Fernseher();
-		fernseher.GibFernseherZustandAus();
+		MusikSammlung sammlung = new MusikSammlung();
 
-		fernseher.ÄndereFernseherAnZustand(); // a) An / Aus
-		fernseher.GibFernseherZustandAus();
+		String[] lieder = new String[] {
+			"Clair de Lune",
+			"War Without Reason",
+			"pq-Formel",
+			"Eulers Algorithmus",
+		};
 
-		fernseher.ÄndereLautstärke(5); // b) Lautstärke
-		fernseher.GibFernseherZustandAus();
+		for (String lied : lieder) {
+			sammlung.DateiHinzufügen(lied);
+		}
 
-		fernseher.ÄndereFernseherStummZustand(); // c) Stummschalten
-		fernseher.GibFernseherZustandAus();
+		PrintToConsole(String.format(
+			"Anzahl an Lieder in Sammlung: %s",
+			sammlung.GibAnzahlDateien()));
 
-		fernseher.ÄndereLautstärke(Fernseher.Lautstärken.HERUNTER); // d) Lautstärke -> "Lauter" / "Leiser"
-		fernseher.GibFernseherZustandAus();
-
-		fernseher.WechsleSender(24); // e) Sender auswählen
-		fernseher.GibFernseherZustandAus();
+		sammlung.DateiAusgeben(0);
+		sammlung.DateiEntfernen(0);
+		sammlung.DateiAusgeben(0);
 	}
 }

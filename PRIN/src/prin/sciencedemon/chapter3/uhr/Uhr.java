@@ -1,4 +1,4 @@
-package prin.sciencedemon.chapter3.uhr;
+package prin.ScienceDemon.Chapter3.Uhr;
 
 public class Uhr {
 	private UhrSegment stunden;

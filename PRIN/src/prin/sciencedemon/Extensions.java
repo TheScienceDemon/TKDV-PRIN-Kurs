@@ -1,4 +1,4 @@
-package prin.sciencedemon;
+package prin.ScienceDemon;
 
 public class Extensions {
 	public static float Clamp(float value, float min, float max) {
@@ -7,5 +7,9 @@ public class Extensions {
 
 	public static boolean IstZwischen(int value, int min, int max) {
 		return value >= min && value <= max;
+	}
+
+	public static void PrintToConsole(String line) {
+		System.out.println(line);
 	}
 }

@@ -1,6 +1,6 @@
-package prin.sciencedemon.chapter2.fernseher;
+package prin.ScienceDemon.Chapter2.Fernseher;
 
-import prin.sciencedemon.Extensions;
+import prin.ScienceDemon.Extensions;
 
 public class Fernseher {
 	private boolean istAn;

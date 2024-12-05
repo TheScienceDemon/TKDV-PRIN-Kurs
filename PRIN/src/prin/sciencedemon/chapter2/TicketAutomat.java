@@ -1,4 +1,4 @@
-package prin.sciencedemon.chapter2;
+package prin.ScienceDemon.Chapter2;
 
 public class TicketAutomat {
 	private int preis;

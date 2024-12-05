@@ -1,6 +1,6 @@
-package prin.sciencedemon.chapter2;
+package prin.ScienceDemon.Chapter2;
 
-import prin.sciencedemon.Extensions;
+import prin.ScienceDemon.Extensions;
 
 public class Heizung {
 	private float temperatur;
