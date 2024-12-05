@@ -26,7 +26,7 @@ public class Heizung {
 			: temperatur - schrittweite;
 
 		temperatur = Extensions.Clamp(temperatur, min, max);
-		System.out.println(String.format("Neue temperatur: %s", temperatur));
+		System.out.printf("Neue temperatur: %s%n", temperatur);
 	}
 
 	public void setzeSchrittweite(float neueSchrittweite) {

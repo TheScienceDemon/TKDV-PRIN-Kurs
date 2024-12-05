@@ -1,5 +1,6 @@
 package prin.ScienceDemon.Chapter4.MusikSammlungV1;
 
+import prin.ScienceDemon.Extensions;
 import java.util.ArrayList;
 
 public class MusikSammlung {
@@ -18,16 +19,34 @@ public class MusikSammlung {
     }
 
     public void DateiAusgeben(int index) {
-        if (index >= 0 && index < dateien.size()) {
-            String dateiname = dateien.get(index);
-            System.out.println(dateiname);
-        }
+        if (!GültigerIndex(index)) { return; }
+
+        String dateiname = dateien.get(index);
+        System.out.println(dateiname);
     }
 
     public void DateiEntfernen(int index) {
-        if (index >= 0 && index < dateien.size()) {
-            dateien.remove(index);
-        }
+        if (!GültigerIndex(index)) { return; }
+
+        dateien.remove(index);
     }
 
+    public void IndexPrüfen(int index) {
+        if (Extensions.IstZwischen(index, 0, dateien.size() - 1)) { return; }
+        
+        String fehlermeldung = String.format(
+            "Index-Grenzverletzung in Array \"dateien\"!\nMaximale Array-Größe: %s\nAngegebener Index: %s",
+            dateien.size(),
+            index);
+
+        Extensions.PrintToConsole(fehlermeldung);
+    }
+
+    public boolean GültigerIndex(int index) {
+        if (dateien.isEmpty()) {
+            return false;
+        }
+
+        return Extensions.IstZwischen(index, 0, dateien.size() - 1);
+    }
 }

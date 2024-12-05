@@ -4,7 +4,6 @@ import prin.ScienceDemon.Chapter4.MusikSammlungV1.MusikSammlung;
 import static prin.ScienceDemon.Extensions.PrintToConsole;
 
 public class Main {
-
 	public static void main(String[] args) {
 		MusikSammlung sammlung = new MusikSammlung();
 
@@ -19,12 +18,8 @@ public class Main {
 			sammlung.DateiHinzufügen(lied);
 		}
 
-		PrintToConsole(String.format(
-			"Anzahl an Lieder in Sammlung: %s",
-			sammlung.GibAnzahlDateien()));
+		// Code ab hier
 
-		sammlung.DateiAusgeben(0);
-		sammlung.DateiEntfernen(0);
-		sammlung.DateiAusgeben(0);
+		sammlung.IndexPrüfen(76);
 	}
 }
