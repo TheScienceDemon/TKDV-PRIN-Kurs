@@ -1,11 +1,18 @@
 package prin.ScienceDemon;
 
-import prin.ScienceDemon.Chapter4.MusikSammlungV1.MusikSammlung;
-import prin.ScienceDemon.Chapter4.Verein.VereinDemo;
+import prin.ScienceDemon.Chapter4.Glücksspiel.Lotto;
 
 public class Main {
 	public static void main(String[] args) {
-		VereinDemo verein = new VereinDemo();
-		verein.Demo();
+		Lotto gambling = new Lotto();
+
+		Extensions.PrintToConsole("\n\nErste Ziehung...");
+		gambling.ZahlenZiehen();
+
+		Extensions.PrintToConsole("\n\nZweite Ziehung...");
+		gambling.ZahlenZiehen();
+
+		Extensions.PrintToConsole("\n\nDritte Ziehung...");
+		gambling.ZahlenZiehen();
 	}
 }
