@@ -1,0 +1,36 @@
+:root {
+	--color-background-inner:#131313;
+	--color-background-outer:#212224;
+	--color-border:#009EC1;
+}
+
+body {
+	color: white;
+	margin: 0;
+
+	font-family: 'Bahnschrift', Courier, monospace;
+	background-color: var(--color-background-outer);
+}
+
+header {
+	text-align: center;
+	background-color: var(--color-background-inner);
+
+	border-bottom: 3px solid var(--color-border);
+	padding: .5rem 0;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h1, p {
+	margin: 0;
+	color: white;
+}
+
+#header-title {
+	font-size: clamp(1.5rem, 4vw, 4.5rem);
+}
