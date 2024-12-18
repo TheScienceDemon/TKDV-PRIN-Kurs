@@ -2,6 +2,9 @@ package prin.ScienceDemon;
 
 import prin.ScienceDemon.Chapter4.Bank.Bank;
 import prin.ScienceDemon.Chapter4.Bank.Konto;
+import prin.ScienceDemon.Chapter4.Bank.Transaktion;
+
+import java.util.ArrayList;
 
 public class Main {
 	public static void main(String[] args) {
@@ -23,5 +26,8 @@ public class Main {
 
 		kontoLouisRuppert.Einzahlen(1000);
 		kontoLouisRuppert.Überweisen(kontoGabrielBaldreich, 200);
+
+		ArrayList<Transaktion> transaktionenLouisRuppert = kontoLouisRuppert.GetTransaktionsAufzeichnungen();
+		Extensions.PrintToConsole(transaktionenLouisRuppert.get(0).toString());
 	}
 }

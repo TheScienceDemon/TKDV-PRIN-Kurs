@@ -20,6 +20,10 @@ public class Konto {
 		return besitzer;
 	}
 
+	public ArrayList<Transaktion> GetTransaktionsAufzeichnungen() {
+		return transaktionsAufzeichnungen;
+	}
+
 	public void NeueTransaktion(Transaktion transaktion) {
 		transaktionsAufzeichnungen.add(transaktion);
 	}

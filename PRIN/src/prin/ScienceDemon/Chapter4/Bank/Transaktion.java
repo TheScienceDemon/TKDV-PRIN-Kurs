@@ -2,6 +2,7 @@ package prin.ScienceDemon.Chapter4.Bank;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 
 public class Transaktion {
 	private TransaktionsArten transaktionsArt;
@@ -23,6 +24,6 @@ public class Transaktion {
 	public String toString() {
 		return String.format(
 			"%s, %s Uhr, %s, %s€",
-			datum, uhrzeit, transaktionsArt, betrag);
+			datum, uhrzeit.truncatedTo(ChronoUnit.SECONDS), transaktionsArt, betrag);
 	}
 }
