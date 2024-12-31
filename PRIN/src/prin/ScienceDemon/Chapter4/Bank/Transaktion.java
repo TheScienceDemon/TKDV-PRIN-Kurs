@@ -15,7 +15,7 @@ public class Transaktion {
 		this.betrag = betrag;
 
 		datum = LocalDate.now();
-		uhrzeit = LocalTime.now();
+		uhrzeit = LocalTime.now().truncatedTo(ChronoUnit.SECONDS);
 
 		besitzer.NeueTransaktion(this);
 	}
@@ -24,6 +24,6 @@ public class Transaktion {
 	public String toString() {
 		return String.format(
 			"%s, %s Uhr, %s, %s€",
-			datum, uhrzeit.truncatedTo(ChronoUnit.SECONDS), transaktionsArt, betrag);
+			datum, uhrzeit, transaktionsArt, betrag);
 	}
 }

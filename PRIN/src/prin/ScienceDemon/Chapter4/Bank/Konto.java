@@ -5,15 +5,21 @@ import prin.ScienceDemon.Extensions;
 import java.util.ArrayList;
 
 public class Konto {
-	private int kontonummer;
+	private String kontonummer;
 	private String besitzer;
+	private String IBAN;
 	private double überziehungslimit = 500;
 	private double geldbetrag = 0;
 	private ArrayList<Transaktion> transaktionsAufzeichnungen = new ArrayList<>();
 
 	public Konto(Bank bank, String besitzer) {
 		this.besitzer = besitzer;
-		kontonummer = bank.KontoHinzufügen(this);
+		kontonummer = bank.KontonummerGenerieren(bank.KontoHinzufügen(this));
+		IBAN = bank.IBAN_Generieren(this);
+	}
+
+	public String GetKontonummer() {
+		return kontonummer;
 	}
 
 	public String GetBesitzer() {
@@ -26,6 +32,22 @@ public class Konto {
 
 	public void NeueTransaktion(Transaktion transaktion) {
 		transaktionsAufzeichnungen.add(transaktion);
+	}
+
+	public void Einzahlen(double betrag, TransaktionsArten transaktionsArt) {
+		if (!BetragNichtNiedrigerNull(betrag)) {
+			Extensions.PrintToConsole(String.format(
+				"""
+				Achtung! Konto versucht, Betrag unter 0 einzuzahlen!
+				%s
+				Auszuzahlender Betrag: %s""",
+				this, betrag));
+
+			return;
+		}
+
+		new Transaktion(this, transaktionsArt, betrag);
+		geldbetrag += betrag;
 	}
 
 	public void Einzahlen(double betrag) {
@@ -65,6 +87,15 @@ public class Konto {
 			return false;
 		}
 
+		if (!BetragNichtGrößerLimit(betrag)) {
+			Extensions.PrintToConsole(String.format(
+				"Achtung! Konto überschreitet Überziehungslimit!\n" +
+					"%s -- Auszuzahlender Betrag: %s",
+				this, betrag));
+
+			return false;
+		}
+
 		new Transaktion(this, TransaktionsArten.Abhebung, betrag);
 		geldbetrag -= betrag;
 
@@ -92,10 +123,19 @@ public class Konto {
 			return false;
 		}
 
-		new Transaktion(this, TransaktionsArten.Überweisung, betrag);
+		if (!BetragNichtGrößerLimit(betrag)) {
+			Extensions.PrintToConsole(String.format(
+				"Achtung! Konto überschreitet Überziehungslimit!\n" +
+					"%s -- Zu überweisender Betrag: %s",
+				this, betrag));
+
+			return false;
+		}
+
+		new Transaktion(this, TransaktionsArten.Überweisung, -betrag);
 		geldbetrag -= betrag;
 
-		ziel.Einzahlen(betrag);
+		ziel.Einzahlen(betrag, TransaktionsArten.Überweisung);
 
 		return true;
 	}
@@ -108,11 +148,16 @@ public class Konto {
 		return betrag <= geldbetrag;
 	}
 
+	private boolean BetragNichtGrößerLimit(double betrag) {
+		return betrag <= überziehungslimit;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
 			"Besitzer: %s (Kontonummer: %s)\n" +
-			"Geldbetrag: %s€",
-			besitzer, kontonummer, geldbetrag);
+			"Geldbetrag: %s€\n" +
+			"IBAN: %s",
+			besitzer, kontonummer, geldbetrag, IBAN);
 	}
 }
